@@ -1,0 +1,25 @@
+{
+  "name": "www.hkapply.com",
+  "version": "0.1.0",
+  "description": "website for hkapply",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:inkless/www.hkapply.com.git"
+  },
+  "keywords": [
+    "apply",
+    "hong",
+    "kong",
+    "university"
+  ],
+  "author": "Guangda Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inkless/www.hkapply.com/issues"
+  },
+  "homepage": "https://github.com/inkless/www.hkapply.com"
+}
