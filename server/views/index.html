@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <title>小猪快飞|专注留学香港的申请专家</title>
+  <meta property="og:title" content="小猪快飞|专注香港留学的申请专家"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://www.hkapply.com/"/>
+  <meta property="og:site_name" content="小猪快飞|专注香港留学的申请专家"/>
+  <link rel="stylesheet" type="text/css" href="static/css/main.css">
+</head>
+<body>
+  <h1>Welcome</h1>
+  <div style="height: 500px; background: green">
+    <div class="icon weixin"></div>
+    <div class="icon weibo"></div>
+    <div class="icon fb"></div>
+    <div class="icon fb-s"></div>
+    <div class="icon baidu-s"></div>
+    <div id="app"></div>
+  </div>
+
+  <button id="btn">Open haha</button>
+  {% if env.production %}
+    <script src="static/js/main-{{ env.assets.hash }}.min.js"></script>
+  {% else %}
+    <script src="static/js/main.js"></script>
+  {% endif %}
+</body>
+</html>

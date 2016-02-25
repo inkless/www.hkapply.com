@@ -1,0 +1,45 @@
+/* import css files */
+@import 'purecss/pure-min';
+@import 'photoswipe/photoswipe';
+@import 'photoswipe/default-skin';
+
+@import 'variables';
+@import 'utilities';
+@import 'sprite';
+
+.weibo {
+  @include sprite($weibo);
+}
+
+.fb {
+  @include sprite($fb);
+}
+
+.weixin {
+  @include sprite($weixin);
+}
+
+.baidu {
+  @include sprite($baidu);
+}
+
+.weibo-s {
+  @include sprite($weibo-s);
+}
+
+.fb-s {
+  @include sprite($fb-s);
+}
+
+.weixin-s {
+  @include sprite($weixin-s);
+}
+
+.baidu-s {
+  @include sprite($baidu-s);
+}
+
+#btn {
+  border: 3px solid black;
+  color: white;
+}
