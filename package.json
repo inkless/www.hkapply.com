@@ -23,13 +23,13 @@
     "clean": "rm -rf static/dist",
     "icons": "sprity create static/src/images/ static/src/images/icons/*.png -s ../../src/styles/_sprite.scss -p sass --style-type scss -d 1:96 -d 2:192",
     "lint": "eslint static/src/js",
-    "serve": "browser-sync start --proxy http://localhost:3005 --files 'static/dist/images/*.*, static/dist/*.css, static/dist/*.js, **/*.html, !node_modules/**/*.html'",
+    "browser-sync": "browser-sync start --proxy http://localhost:3000 --files 'static/dist/images/*.*, static/dist/*.css, static/dist/*.js, **/*.html, !node_modules/**/*.html'",
     "watch": "npm run lint && webpack --progress --config webpack.config.js --colors --watch",
-    "dev": "npm-run-all -p watch start serve",
+    "dev": "npm-run-all -p watch start browser-sync",
     "build": "npm run lint && webpack --progress --config webpack.config.js --colors",
     "build:prod": "npm run lint && webpack --progress --config webpack.config.production.js --colors",
-    "start": "node ./index.js",
-    "start:prod": "NODE_ENV=production node ./index.js"
+    "server": "node ./index.js",
+    "start": "NODE_ENV=production node ./index.js"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.3.0",
@@ -60,6 +60,7 @@
   "dependencies": {
     "compression": "^1.6.1",
     "express": "^4.13.4",
+    "express-minify-html": "^0.3.1",
     "photoswipe": "^4.1.1",
     "swig": "^1.4.2"
   }
