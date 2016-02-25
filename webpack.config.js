@@ -33,8 +33,7 @@ module.exports = {
     }, {
       test: /\.(jpe?g|png|gif|svg)$/i,
       loaders: [
-        'url?limit=8000&hash=sha512&digest=hex&name=images/[hash].[ext]',
-        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        'file?hash=sha512&digest=hex&name=images/[hash].[ext]'
       ]
     }, {
       test: /\.css$/,
