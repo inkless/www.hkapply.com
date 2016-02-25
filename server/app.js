@@ -16,7 +16,7 @@ var env = {
 
 if (env.production) {
   Object.assign(env, {
-    assets: JSON.parse(fs.readFileSync(path.join(__dirname, '../static/dist/js/webpack.stats.json')))
+    assets: JSON.parse(fs.readFileSync(path.join(__dirname, '../assets.json')))
   });
 } else {
   app.set('view cache', false);

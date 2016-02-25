@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var SaveAssetsJson = require('assets-webpack-plugin');
 
 var sassLoaders = [
   'css',
@@ -10,13 +11,12 @@ var sassLoaders = [
 ];
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
   entry: [
     path.join(__dirname, 'static/src/js/app.js')
   ],
   output: {
     path: path.join(__dirname, 'static/dist/'),
-    filename: '[name].js',
+    filename: '[name]-[hash].min.js',
     publicPath: '/static/'
   },
   module: {
@@ -45,7 +45,22 @@ module.exports = {
     }]
   },
   plugins: [
-    new ExtractTextPlugin('[name].css')
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new ExtractTextPlugin('[name]-[hash].min.css'),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false,
+        screw_ie8: true
+      }
+    }),
+    new SaveAssetsJson({
+      path: __dirname,
+      filename: 'assets.json'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
   ],
   postcss: [
     autoprefixer({

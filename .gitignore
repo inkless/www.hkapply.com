@@ -38,3 +38,4 @@ node_modules
 # Dist
 static/dist
 
+assets.json
