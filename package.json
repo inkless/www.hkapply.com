@@ -19,11 +19,14 @@
     "url": "https://github.com/inkless/www.hkapply.com/issues"
   },
   "homepage": "http://www.hkapply.com",
+  "config": {
+    "port": 3009
+  },
   "scripts": {
     "clean": "rm -rf static/dist",
     "icons": "sprity create static/src/images/ static/src/images/icons/*.png -s ../../src/styles/_sprite.scss -p sass --style-type scss -d 1:96 -d 2:192",
     "lint": "eslint static/src/js",
-    "browser-sync": "browser-sync start --proxy http://localhost:3000 --files 'static/dist/images/*.*, static/dist/*.css, static/dist/*.js, **/*.html, !node_modules/**/*.html'",
+    "browser-sync": "browser-sync start --proxy http://localhost:$npm_package_config_port --files 'static/dist/images/*.*, static/dist/*.css, static/dist/*.js, **/*.html, !node_modules/**/*.html'",
     "watch": "npm run lint && webpack --progress --config webpack.config.js --colors --watch",
     "dev": "npm-run-all -p watch start browser-sync",
     "build": "npm run lint && webpack --progress --config webpack.config.js --colors",

@@ -4,8 +4,9 @@ var express = require('express');
 var minifyHTML = require('express-minify-html');
 var swig = require('swig');
 var compression = require('compression');
+var packageJson = require('../package.json');
 
-const PORT = 3000;
+const PORT = packageJson.config.port || 3000;
 var app = express();
 
 app.engine('html', swig.renderFile);
