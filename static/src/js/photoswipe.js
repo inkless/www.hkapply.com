@@ -1,3 +1,6 @@
+import 'styles/photoswipe/photoswipe';
+import 'styles/photoswipe/default-skin';
+
 import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
