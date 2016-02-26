@@ -1,5 +1,8 @@
 /* import css files */
-@import 'purecss/pure-min';
+@import 'foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
 
 @import 'variables';
 @import 'utilities';

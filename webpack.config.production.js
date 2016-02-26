@@ -7,7 +7,7 @@ var SaveAssetsJson = require('assets-webpack-plugin');
 var sassLoaders = [
   'css',
   'postcss',
-  'sass?includePaths[]=' + path.join(__dirname, 'static/src/styles')
+  'sass'
 ];
 
 module.exports = {
@@ -67,6 +67,12 @@ module.exports = {
       browsers: ['last 2 versions']
     })
   ],
+  sassLoader: {
+    includePaths: [
+      path.join(__dirname, 'static/src/styles'),
+      path.join(__dirname, 'node_modules')
+    ]
+  },
   resolve: {
     extensions: ['', '.js', '.css', '.scss'],
     modulesDirectories: ['static/src', 'node_modules']
