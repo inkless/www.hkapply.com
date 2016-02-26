@@ -1,51 +1,8 @@
 /* import css files */
 @import 'foundation-sites/scss/foundation';
-
-@include foundation-global-styles;
-@include foundation-grid;
+@include foundation-everything;
 
 @import 'variables';
 @import 'utilities';
-@import 'sprite';
 
-.weibo {
-  @include sprite($weibo);
-}
-
-.fb {
-  @include sprite($fb);
-}
-
-.weixin {
-  @include sprite($weixin);
-}
-
-.baidu {
-  @include sprite($baidu);
-}
-
-.weibo-s {
-  @include sprite($weibo-s);
-}
-
-.fb-s {
-  @include sprite($fb-s);
-}
-
-.weixin-s {
-  @include sprite($weixin-s);
-}
-
-.baidu-s {
-  @include sprite($baidu-s);
-}
-
-#btn {
-  border: 3px solid blue;
-  background: blue;
-  color: red;
-}
-
-.help {
-  color: yellow;
-}
+@import 'icons';

@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'utilities';
+@import 'foundation-sites/scss/util/util';
+
+.top-bar {
+  background: $nav-bg-color;
+  .menu {
+    background: transparent;
+    // Only affects medium screens and larger
+    @include breakpoint(medium) {
+      width: 460px;
+      margin: auto;
+    }
+
+    li a {
+      color: $nav-text-color;
+      transition: color .6s;
+      &:hover {
+        color: #808080;
+      }
+    }
+  }
+}
