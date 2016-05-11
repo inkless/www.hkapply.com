@@ -1,0 +1,72 @@
+@import 'variables';
+@import 'utilities';
+@import 'icons';
+
+.fixed-background {
+  background: url(../images/background/bg1.jpg) 0 0 no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+main.content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+/**
+ * logo container
+ */
+.small-section.logo-container {
+  height: 800px;
+
+  figure {
+    margin-top: 160px;
+    img {
+      margin: auto;
+      display: block;
+    }
+  }
+
+  .share-container {
+    margin-top: 160px;
+    .share {
+      width: 180px;
+      margin: auto;
+      .share-btn {
+        width: 60px;
+        display: inline-block;
+        float: left;
+        a {
+          display: block;
+          margin: auto;
+        }
+      }
+
+      &::after {
+        @include clear();
+      }
+    }
+  }
+}
+
+/**
+ * service container
+ */
+.small-section.service-container {
+  height: 600px;
+  background: url(../images/background/bg2.jpg) 0 0 no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding-top: 120px;
+  h1 {
+    font-size: 34px;
+    text-align: center;
+  }
+}

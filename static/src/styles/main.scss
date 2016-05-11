@@ -1,8 +1,4 @@
-/* import css files */
 @import 'foundation-sites/scss/foundation';
 @include foundation-everything;
 
-@import 'variables';
-@import 'utilities';
-
-@import 'icons';
+@import 'homepage';

@@ -45,9 +45,7 @@ if (env.production) {
 app.use('/static', express.static(path.join(__dirname, '../static/dist')));
 
 app.get('/', function (req, res) {
-  res.render('index', {
-    env: env
-  });
+  res.render('index', {env});
 });
 
 app.listen(PORT, function (err) {

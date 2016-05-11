@@ -3,7 +3,11 @@
 {% block content %}
 {% include "./component/navigation.html" %}
 
-<section style="background: #bbb; height: 1000px;">
+<div class="fixed-background"></div>
 
-</section>
+<main class="content">
+  {% include "./component/logo-container.html" %}
+  {% include "./component/service.html" %}
+</main>
+
 {% endblock %}

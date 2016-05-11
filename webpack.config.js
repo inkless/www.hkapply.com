@@ -48,7 +48,7 @@ module.exports = {
   ],
   postcss: [
     autoprefixer({
-      browsers: ['last 2 versions']
+      browsers: ['ie >= 9']
     })
   ],
   sassLoader: {

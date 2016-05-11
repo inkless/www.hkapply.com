@@ -1,23 +1,76 @@
+@import 'foundation-sites/scss/util/util';
 @import 'variables';
 @import 'utilities';
-@import 'foundation-sites/scss/util/util';
 
 .top-bar {
+  $item_height: 48px;
+
   background: $nav-bg-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  transition: height .5s ease-in-out;
   .menu {
     background: transparent;
-    // Only affects medium screens and larger
-    @include breakpoint(medium) {
-      width: 460px;
-      margin: auto;
+    margin: auto;
+    width: 70%;
+    font-size: 15px;
+    // Only affects medium screen
+    @include breakpoint(medium only) {
+      width: 80%;
     }
 
-    li a {
-      color: $nav-text-color;
-      transition: color .6s;
-      &:hover {
-        color: #808080;
+    display: block;
+    li {
+      height: $item_height;
+      display: inline-block;
+      width: 20%;
+      float: left;
+      a {
+        color: $nav-text-color;
+        transition: color 0.4s ease 0s;
+        padding: 0 16px;
+        height: $item_height;
+        line-height: $item_height;
+        text-align: center;
+        &:hover {
+          color: $nav-text-hover-color;
+        }
       }
     }
+
+    &::after {
+      @include clear();
+    }
+  }
+
+  // Only affects small screen
+  @include breakpoint(small down) {
+    .menu {
+      $item_height: 60px;
+      li {
+        width: 100%;
+        height: $item_height;
+        float: none;
+        a {
+          height: $item_height;
+          line-height: $item_height;
+        }
+      }
+    }
+    height: 0;
+    &.active {
+      height: $item_height * 5;
+    }
+  }
+}
+
+.title-bar {
+  .menu-icon {
+    outline: none;
   }
 }
