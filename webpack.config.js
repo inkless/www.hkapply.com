@@ -10,7 +10,7 @@ var sassLoaders = [
 ];
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: '#cheap-module-eval-source-map',
   entry: [
     path.join(__dirname, 'static/src/js/app.js')
   ],

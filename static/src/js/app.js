@@ -4,3 +4,5 @@ import 'styles/main';
 import './photoswipe';
 // handle navigation menu
 import './navigation';
+// handle service container
+import './service-container';
