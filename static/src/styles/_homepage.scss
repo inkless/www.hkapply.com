@@ -61,7 +61,7 @@ main.content {
  */
 .small-section.service-container {
   height: 700px;
-  background: white;
+  background: $service-container-bg-color;
   overflow: hidden;
   position: relative;
 
@@ -83,7 +83,6 @@ main.content {
     left: 0;
     top: 120px;
     width: 100%;
-    height: 500px;
     z-index: 2;
     h1 {
       font-size: 34px;
@@ -94,10 +93,7 @@ main.content {
     .degree-section {
       margin-top: 100px;
       .degree-container {
-        width: 780px;
-        margin: auto;
         .degree {
-          width: 260px;
           display: inline-block;
           float: left;
           figure {
@@ -111,10 +107,11 @@ main.content {
             margin-bottom: 20px;
           }
           .details {
-            width: 200px;
             margin: auto;
+            padding: 20px;
             font-size: 15px;
             text-align: justify;
+            max-width: 240px;
           }
 
           &.master {
@@ -126,6 +123,17 @@ main.content {
         &::after {
           @include clear();
         }
+      }
+    }
+  }
+
+  @include breakpoint(small down) {
+    height: 1300px;
+    .content {
+      top: 30px;
+
+      .degree-section {
+        margin-top: 0;
       }
     }
   }

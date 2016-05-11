@@ -4,10 +4,16 @@ const $logoContainer = $('.logo-container.small-section');
 const $serviceContainer = $('.service-container.small-section');
 const $serviceBackground = $serviceContainer.find('.background');
 
-const logoContainerHeight = $logoContainer.height();
-const serviceContainerHeight = $serviceContainer.height();
-const winHeight = $(window).height();
-const initialY = winHeight - logoContainerHeight - serviceContainerHeight;
+let logoContainerHeight;
+let serviceContainerHeight;
+let winHeight;
+let initialY;
+
+calculateAllData();
+doTransform(calculateContainerPosition());
+
+$(document).on('scroll', moveBackground);
+$(window).on('resize', calculateAllData);
 
 function getContainerRect() {
   return $serviceContainer.get(0).getBoundingClientRect();
@@ -26,6 +32,10 @@ function calculateContainerPosition() {
   return diff > 0 ? diff * .2 : diff;
 }
 
-doTransform(calculateContainerPosition());
-$(document).on('scroll', moveBackground);
+function calculateAllData() {
+  logoContainerHeight = $logoContainer.height();
+  serviceContainerHeight = $serviceContainer.height();
+  winHeight = $(window).height();
+  initialY = winHeight - logoContainerHeight - serviceContainerHeight;
+}
 

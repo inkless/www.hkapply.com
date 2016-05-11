@@ -50,6 +50,7 @@
 
   // Only affects small screen
   @include breakpoint(small down) {
+    top: 42px;
     .menu {
       $item_height: 60px;
       li {
@@ -70,6 +71,10 @@
 }
 
 .title-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
   .menu-icon {
     outline: none;
   }
