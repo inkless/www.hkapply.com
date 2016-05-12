@@ -27,11 +27,11 @@
     "icons": "sprity create static/src/images/ static/src/images/icons/*.png -s ../../src/styles/_sprite.scss -p sass --style-type scss -d 1:96 -d 2:192",
     "favicon": "mkdir -p static/dist/images && cp static/src/images/favicon.png static/dist/images/favicon.png",
     "imagemin": "imagemin static/src/images static/dist/images -p",
-    "watch-image": "onchange 'static/src/images/*' -- npm run imagemin",
+    "watch-image": "onchange 'static/src/images/**/*' -- npm run imagemin",
     "lint": "eslint static/src/js",
     "browser-sync": "browser-sync start --proxy http://localhost:$npm_package_config_port --files 'static/dist/images/*.*, static/dist/*.css, static/dist/*.js, **/*.html, !node_modules/**/*.html'",
     "watch": "npm run lint && webpack --progress --config webpack.config.js --colors --watch && onchange 'static/src/images/*.(jpg|png)' -- npm run imagemin",
-    "dev": "npm-run-all -p watch watch-image server browser-sync",
+    "dev": "npm-run-all -p imagemin watch watch-image server browser-sync",
     "build": "npm run lint && npm run imagemin && webpack --progress --config webpack.config.js --colors",
     "build:prod": "npm run lint && npm run imagemin && webpack --progress --config webpack.config.production.js --colors",
     "server": "node ./index.js",
@@ -73,6 +73,7 @@
     "express-minify-html": "^0.3.1",
     "foundation-sites": "^6.1.2",
     "jquery": "^2.2.3",
+    "jquery-form": "^3.50.0",
     "photoswipe": "^4.1.1",
     "swig": "^1.4.2"
   }

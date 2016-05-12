@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
-const $logoContainer = $('.logo-container.small-section');
-const $serviceContainer = $('.service-container.small-section');
+const $logoContainer = $('.logo-container');
+const $serviceContainer = $('.service-container');
 const $serviceBackground = $serviceContainer.find('.background');
 
 let logoContainerHeight;
@@ -29,7 +29,7 @@ function moveBackground(event) {
 
 function calculateContainerPosition() {
   const diff = winHeight - getContainerRect().bottom;
-  return diff > 0 ? diff * .2 : diff;
+  return diff > 0 ? diff * 0.3 : diff * 0.8;
 }
 
 function calculateAllData() {

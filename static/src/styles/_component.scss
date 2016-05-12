@@ -1,0 +1,28 @@
+.share-container {
+  .share {
+    width: 180px;
+    margin: auto;
+    .share-btn {
+      width: 60px;
+      display: inline-block;
+      float: left;
+      a {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    &::after {
+      @include clear();
+    }
+  }
+
+  &.small {
+    .share {
+      width: 120px;
+      .share-btn {
+        width: 40px;
+      }
+    }
+  }
+}

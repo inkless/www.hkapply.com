@@ -1,11 +1,11 @@
 @import 'variables';
 @import 'utilities';
 @import 'icons';
+@import 'component';
 
 .fixed-background {
   background: url(../images/background/bg1.jpg) 0 0 no-repeat;
   background-size: cover;
-  background-position: center center;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -23,35 +23,32 @@ main.content {
 /**
  * logo container
  */
-.small-section.logo-container {
+.logo-container {
   height: 800px;
-  padding-top: 160px;
-
-  figure {
-    img {
-      margin: auto;
-      display: block;
-    }
+  position: relative;
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
   }
 
-  .share-container {
-    margin-top: 160px;
-    .share {
-      width: 180px;
-      margin: auto;
-      .share-btn {
-        width: 60px;
-        display: inline-block;
-        float: left;
-        a {
-          display: block;
-          margin: auto;
-        }
+  .content {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    figure {
+      img {
+        margin: auto;
+        display: block;
       }
-
-      &::after {
-        @include clear();
-      }
+    }
+    .share-container {
+      margin-top: 160px;
     }
   }
 }
@@ -59,7 +56,7 @@ main.content {
 /**
  * service container
  */
-.small-section.service-container {
+.service-container {
   height: 700px;
   background: $service-container-bg-color;
   overflow: hidden;
@@ -81,34 +78,35 @@ main.content {
   .content {
     position: absolute;
     left: 0;
-    top: 120px;
+    top: 100px;
     width: 100%;
     z-index: 2;
     h1 {
       font-size: 34px;
       text-align: center;
-      color: #325466;
     }
 
     .degree-section {
-      margin-top: 100px;
+      margin-top: 50px;
       .degree-container {
         .degree {
           display: inline-block;
           float: left;
           figure {
             text-align: center;
-            height: 135px;
-          }
-          figcaption {
-            text-align: center;
-            font-size: 20px;
-            margin-top: 10px;
-            margin-bottom: 20px;
+            height: 170px;
+            position: relative;
+            figcaption {
+              text-align: center;
+              font-size: 20px;
+              position: absolute;
+              width: 100%;
+              bottom: 0;
+            }
           }
           .details {
             margin: auto;
-            padding: 20px;
+            padding: 0 20px;
             font-size: 15px;
             text-align: justify;
             max-width: 240px;
@@ -128,7 +126,7 @@ main.content {
   }
 
   @include breakpoint(small down) {
-    height: 1300px;
+    height: 1120px;
     .content {
       top: 30px;
 
@@ -142,7 +140,145 @@ main.content {
 /**
  * Story container
  */
-.small-section.story-container {
-  height: 1000px;
-  background: gray;
+.story-container {
+  background: white;
+  padding: 100px 0;
+  .content {
+    h1, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 34px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  .case-container {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .case {
+      width: 360px;
+
+      figure {
+        margin: 0;
+        a.img-container {
+          display: block;
+          position: relative;
+          .img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            transition: background-color 1s ease;
+          }
+
+          &:hover {
+            .img-overlay {
+              background-color: rgba(50, 50, 50, 0.5);
+            }
+          }
+        }
+      }
+    }
+    &::after {
+      @include clear();
+    }
+  }
+
+  @include breakpoint(small down) {
+    padding: 30px 0;
+  }
+}
+
+/**
+ * introduction container
+ */
+.introduction-container {
+  background: url(../images/background/bg3.jpg) 0 0 no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  .content {
+    background-color: white;
+    padding: 80px;
+    h1 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+    strong {
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    b {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    figure {
+      text-align: center;
+      padding-top: 30px;
+      figcaption {
+        margin-top: 30px;
+      }
+    }
+  }
+  @include breakpoint(small down) {
+    padding: 30px;
+    .content {
+      padding: 30px;
+    }
+  }
+}
+
+/**
+ * apply container
+ */
+.apply-container {
+  background: url(../images/background/bg4.jpg) 0 0 no-repeat;
+  background-size: cover;
+  padding: 100px 30px;
+  .content {
+    background-color: white;
+    padding: 80px;
+    h1 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+    b {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .contact {
+      text-align: center;
+    }
+  }
+  @include breakpoint(small down) {
+    padding: 30px;
+    .content {
+      padding: 30px;
+    }
+  }
+}
+
+footer {
+  background: rgba(50, 50, 50, 0.5);
+  padding: 50px 0 100px;
+  text-align: center;
+  .copyright {
+    font-size: 14px;
+    color: white;
+    margin-top: 20px;
+  }
 }

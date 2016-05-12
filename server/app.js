@@ -43,6 +43,7 @@ if (env.production) {
 }
 
 app.use('/static', express.static(path.join(__dirname, '../static/dist')));
+app.use('/static', express.static(path.join(__dirname, '../static/resource')));
 
 app.get('/', function (req, res) {
   res.render('index', {env});

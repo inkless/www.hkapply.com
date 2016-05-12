@@ -2,13 +2,15 @@
 
 {% block content %}
 {% include "./component/navigation.html" %}
-
-<div class="fixed-background"></div>
+{% include "./component/fixed-background.html" %}
 
 <main class="content">
   {% include "./component/logo-container.html" %}
   {% include "./component/service-container.html" %}
   {% include "./component/story-container.html" %}
+  {% include "./component/introduction-container.html" %}
+  {% include "./component/apply-container.html" %}
+  {% include "./component/footer.html" %}
 </main>
 
 {% endblock %}

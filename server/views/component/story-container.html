@@ -1,2 +1,30 @@
-<section id="story" class="story-container small-section">
+<section id="story" class="story-container">
+  <div class="content">
+    <div class="row">
+      <div class="columns small-centered small-8">
+        <h1>小猪的成功案例</h1>
+        <h3>在过往帮助过的133名申请者中，小猪老师的成功率高达97%</h3>
+        <p>下面我们将展示12个比较经典的成功案例，配上小猪老师的点评大家可以对留学香港的基本要求有个大概的了解。完整的2015-2016年度成功案例列表大家向小猪老师当面咨询的时候将包含在由小猪老师编纂的《学生手册》里哦~</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns">
+        {% set cases = Array(12) %}
+        <ul class="case-container">
+          {% for key, val in cases %}
+          <li class="case {% if loop.index >= 4 %}hide-for-small-only{% endif %}">
+            <figure>
+              <a href="javascript:;" class="img-container"
+                data-index="{{ key }}">
+                <img src="/static/images/cases/case{{ loop.index }}.jpg"
+                  alt="case{{ loop.index }}" title="case{{ loop.index }}" />
+                <div class="img-overlay"></div>
+              </a>
+            </figure>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
