@@ -264,6 +264,9 @@ main.content {
       text-align: center;
     }
   }
+  .callout {
+    text-align: center;
+  }
   @include breakpoint(small down) {
     padding: 30px;
     .content {

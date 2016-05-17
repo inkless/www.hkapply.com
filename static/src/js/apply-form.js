@@ -1,10 +1,11 @@
 import $ from 'jquery';
 
-const $form = $("#apply-form");
+const $applyContainer = $('#apply');
+const $form = $applyContainer.find('#apply-form');
 const rawForm = $form.get(0);
-$form.on('submit', (event) => {
-  event.preventDefault();
+const $callout = $applyContainer.find('.callout');
 
+function submit() {
   const data = {
     name: rawForm.name.value,
     email: rawForm.email.value,
@@ -17,13 +18,21 @@ $form.on('submit', (event) => {
     url: '/apply',
     method: 'POST',
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-    data: data,
+    data,
+    dataType: 'json',
     headers: {
       Accept: 'application/json'
     }
   })
   .done(function(data) {
-    console.log(data);
+    if (data.success) {
+      $callout.show();
+      $form.hide();
+    }
   });
+}
 
+$form.on('submit', (event) => {
+  event.preventDefault();
+  submit();
 });
