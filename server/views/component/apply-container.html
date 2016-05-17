@@ -13,12 +13,12 @@
 
       <div class="row">
         <div class="columns large-9 large-centered medium-12">
-          <form>
-            <input name="name" type="text" placeholder="姓名" />
-            <input name="email" type="text" placeholder="邮箱" />
-            <input name="phone" type="text" placeholder="手机" />
-            <input name="subject" type="text" placeholder="主题" />
-            <textarea name="content" rows="5" placeholder="请简单介绍自己的情况，诸如：现在的就读学校；在班上的成绩；如果有语言成绩也请提供。"></textarea>
+          <form id="apply-form">
+            <input name="name" type="text" placeholder="姓名" title="姓名" required />
+            <input name="email" type="email" placeholder="邮箱" title="邮箱" required />
+            <input name="phone" type="text" pattern="(+86)?\d{11}" title="手机" placeholder="手机" />
+            <input name="subject" type="text" placeholder="主题" title="主题" required />
+            <textarea name="content" rows="5" required title="内容" placeholder="请简单介绍自己的情况，诸如：现在的就读学校；在班上的成绩；如果有语言成绩也请提供。"></textarea>
             <input type="submit" class="expanded button" value="提交">
           </form>
         </div>

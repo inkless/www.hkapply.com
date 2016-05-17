@@ -4,6 +4,7 @@ var express = require('express');
 var minifyHTML = require('express-minify-html');
 var swig = require('swig');
 var compression = require('compression');
+var bodyParser = require('body-parser');
 var packageJson = require('../package.json');
 
 const PORT = packageJson.config.port || 3000;
@@ -48,6 +49,8 @@ app.use('/static', express.static(path.join(__dirname, '../static/resource')));
 app.get('/', function (req, res) {
   res.render('index', {env});
 });
+
+app.post('/apply', bodyParser.urlencoded({extended: false}), require('./apply'));
 
 app.listen(PORT, function (err) {
   if (err) {

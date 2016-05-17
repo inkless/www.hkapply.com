@@ -8,3 +8,5 @@ import './navigation';
 import './fixed-background';
 // handle service container
 import './service-container';
+// form handler
+import './apply-form';

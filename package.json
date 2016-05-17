@@ -68,6 +68,7 @@
     "webpack": "^1.13.0"
   },
   "dependencies": {
+    "body-parser": "^1.15.1",
     "compression": "^1.6.1",
     "express": "^4.13.4",
     "express-minify-html": "^0.3.1",
