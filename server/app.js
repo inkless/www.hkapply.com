@@ -18,13 +18,19 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 var env = {
-  production: process.env.NODE_ENV === 'production'
+  production: process.env.NODE_ENV === 'production',
+  inlineCss: Boolean(process.env.INLINE_CSS)
 };
 
 if (env.production) {
   Object.assign(env, {
     assets: JSON.parse(fs.readFileSync(path.join(__dirname, '../assets.json')))
   });
+  if (env.inlineCss) {
+    Object.assign(env, {
+      inlineCssSrc: env.assets.main.css.replace('\/static', '../../static/dist')
+    });
+  }
   app.use(compression());
   app.use(minifyHTML({
     override: true,

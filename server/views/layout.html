@@ -14,7 +14,13 @@
 
   {% block head %}
   {% if env.production %}
-  <link rel="stylesheet" type="text/css" href="{{ env.assets.main.css }}">
+    {% if env.inlineCss %}
+    <style type="text/css">
+    {% include env.inlineCssSrc %}
+    </style>
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="{{ env.assets.main.css }}">
+    {% endif %}
   {% else %}
   <link rel="stylesheet" type="text/css" href="static/main.css">
   {% endif %}
