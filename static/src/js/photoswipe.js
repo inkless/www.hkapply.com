@@ -80,7 +80,7 @@ function getAllPhotoItems() {
   $caseContainer.find('.img-container img')
     .each(function() {
       items.push({
-        src: this.src,
+        src: this.getAttribute('data-src'),
         w: 1530,
         h: 1122
       });
