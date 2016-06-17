@@ -28,7 +28,7 @@ if (env.production) {
   });
   if (env.inlineCss) {
     Object.assign(env, {
-      inlineCssSrc: env.assets.main.css.replace('\/static', '../../static/dist')
+      inlineCssSrc: env.assets.main.css.replace(/\/static/, '../../static/dist')
     });
   }
   app.use(compression());
