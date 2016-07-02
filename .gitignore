@@ -42,3 +42,5 @@ assets.json
 
 #env
 .env
+
+/tags*
