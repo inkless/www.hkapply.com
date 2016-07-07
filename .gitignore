@@ -43,4 +43,4 @@ assets.json
 #env
 .env
 
-/tags*
+.DS_Store
