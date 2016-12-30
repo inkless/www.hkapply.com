@@ -6,7 +6,7 @@ const $navMenu = $('#nav-menu');
 const $menuList = $navMenu.find('ul.menu');
 
 let isMenuOpen = false;
-$menuIcon.on('click', (event) => {
+$menuIcon.on('click', () => {
   if (isMenuOpen) {
     $navMenu.removeClass('active');
     isMenuOpen = false;
@@ -16,6 +16,6 @@ $menuIcon.on('click', (event) => {
   }
 });
 
-$menuList.on('click', 'a', (event) => {
+$menuList.on('click', 'a', () => {
   $navMenu.removeClass('active');
 });

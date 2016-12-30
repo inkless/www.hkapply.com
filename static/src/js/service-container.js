@@ -1,13 +1,9 @@
 import $ from 'jquery';
 
-const $logoContainer = $('.logo-container');
 const $serviceContainer = $('.service-container');
 const $serviceBackground = $serviceContainer.find('.background');
 
-let logoContainerHeight;
-let serviceContainerHeight;
 let winHeight;
-let initialY;
 
 calculateAllData();
 doTransform(calculateContainerPosition());
@@ -23,7 +19,7 @@ function doTransform(y) {
   $serviceBackground.css('transform', `translate3d(0px, ${y}px, 0px)`);
 }
 
-function moveBackground(event) {
+function moveBackground() {
   doTransform(calculateContainerPosition());
 }
 
@@ -33,9 +29,6 @@ function calculateContainerPosition() {
 }
 
 function calculateAllData() {
-  logoContainerHeight = $logoContainer.height();
-  serviceContainerHeight = $serviceContainer.height();
   winHeight = $(window).height();
-  initialY = winHeight - logoContainerHeight - serviceContainerHeight;
 }
 

@@ -66,7 +66,7 @@ const defaultOptions = {
 
 $('.case-container').on('click', '.img-container', openPhotoswipe);
 
-function openPhotoswipe(event) {
+function openPhotoswipe() {
   const index = parseInt(this.getAttribute('data-index'), 10);
   let options = $.extend({}, defaultOptions);
   options.index = index;
